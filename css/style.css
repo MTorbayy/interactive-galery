@@ -2,23 +2,68 @@
 
 * {
     box-sizing: border-box;
-}
+  }
 
 body {
     background: #000;
-    user-select: none;
+    user-select: none; /* empèche de sélectionner le texte */
     color: #fff;
     font-family: 'Mulish', sans-serif;
-    display: flex;
+    display: flex; /* pour activer les prop justify-content et align-items*/
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
-    overflow: hidden;
+    overflow: hidden; /* cache la barre de scroll*/
 }
 
 .container {
-    background: red;
     width : 90vw;
-    display: flex;
+    display: flex; /* pour aligner les éléments enfant .panel*/
 }
+
+.panel {
+    position: relative;
+    height: 80vh;
+    background-image: url(../images/city-on-winter.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    border-radius: 50px;
+    flex: 0.5; /*chaque enfant aura le même poids, peu importe la valeur*/
+    cursor: pointer; /* la souris se transforme en pointer en passant par dessus */
+    transition : flex 700ms ease-in-out; /* remarque : pour régler finement l'animation, on peut aller chercher sur le site de cubic-bezier.com ou bien sur l'outil de dev de chrome, une fois une valeur rentrée*/
+}
+
+.panel h3 {
+    position: absolute; /*par rapport au plus proche parent en position relative, sinon par rapport à la fenêtre */
+    font-size: 24px;
+    margin: 0;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+} 
+
+.panel.active { /* attention : sans espace entre les deux, sinon le sélecteur va chercher une classe .active enfant de l'élément .panel. Sans espace, on cible un seul élément*/
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
