@@ -54,6 +54,16 @@ body {
     transition: opacity 0.3s ease-in-out 0.4s;
 }
 
+@media screen and (max-width: 480px) {
+    .container {
+        width: 100vw;
+    }
+    .panel:nth-of-type(4), /*pseudo classe : existe mais ne se voit pas. Ici, pseudo-classe structurelle : dépend de la structure html */
+    .panel:nth-of-type(5), {
+        display: none;
+    }
+}
+
 
 
 
