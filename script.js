@@ -14,3 +14,5 @@ for(let panel of panels) {
 }
 // .addEventListener n'écrase pas les autres évènements au click, contrairement à .onclick 
 
+
+
